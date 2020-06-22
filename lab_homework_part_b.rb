@@ -28,4 +28,13 @@ class Team
     def new_players(new_player)
         @players.push(new_player)
     end
+
+    def find_player_by_name(missing_player)
+        for player in @players
+            if player == missing_player
+                return player
+            end
+        end
+        return nil
+    end
 end

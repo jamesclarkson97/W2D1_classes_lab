@@ -29,6 +29,18 @@ class TestTeam < MiniTest::Test
     def test_new_player()
         new_team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
         new_team.new_players("Bibidy-Bobidy")
-        assert_equal(["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy", "Bibidy-Bobidy"], new_team.players)
+        assert_equal(["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy", "Bibidy-Bobidy"], new_team.players())
+    end
+
+    def test_find_player_by_name_fail()
+        team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
+        team.find_player_by_name("Bibby Boy")
+        assert_equal(nil, team.find_player_by_name("Bibby Boy"))
+    end
+
+    def test_find_player_by_name_pass()
+        team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
+        team.find_player_by_name("Billy Bob")
+        assert_equal("Billy Bob", team.find_player_by_name("Billy Bob"))
     end
 end
