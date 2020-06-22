@@ -5,4 +5,8 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new()
 
 class TestTeam < MiniTest::Test
 
-    
+    def test_team_name()
+        team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
+        assert_equal("Wildcats", team.team_name())
+    end
+end
