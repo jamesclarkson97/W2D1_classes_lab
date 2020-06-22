@@ -7,6 +7,7 @@ class Team
         @team_name = team_name
         @players = players
         @coach = coach
+        @points = 0
     end
 
     # def team_name()
@@ -37,4 +38,12 @@ class Team
         end
         return nil
     end
+
+    def update_score_total(result)
+        if result == "win"
+            return @points + 1
+        end
+        return @points
+    end
+
 end
