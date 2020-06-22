@@ -1,6 +1,5 @@
 class Team
 
-
     attr_reader :team_name, :players
     attr_accessor :coach
 
@@ -25,4 +24,8 @@ class Team
     # def new_coach(new_name)
     #     @coach = new_name
     # end
+
+    def new_players(new_player)
+        @players.push(new_player)
+    end
 end

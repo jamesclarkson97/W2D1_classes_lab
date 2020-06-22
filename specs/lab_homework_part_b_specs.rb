@@ -25,4 +25,10 @@ class TestTeam < MiniTest::Test
         team.coach = "Wimon"
         assert_equal("Wimon", team.coach())
     end
+
+    def test_new_player()
+        new_team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
+        new_team.new_players("Bibidy-Bobidy")
+        assert_equal(["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy", "Bibidy-Bobidy"], new_team.players)
+    end
 end
