@@ -27,9 +27,9 @@ class TestTeam < MiniTest::Test
     end
 
     def test_new_player()
-        new_team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
-        new_team.new_players("Bibidy-Bobidy")
-        assert_equal(["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy", "Bibidy-Bobidy"], new_team.players())
+        team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
+        team.new_players("Bibidy-Bobidy")
+        assert_equal(["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy", "Bibidy-Bobidy"], team.players())
     end
 
     def test_find_player_by_name_fail()
@@ -51,8 +51,8 @@ class TestTeam < MiniTest::Test
     end
 
     def test_update_score_total_lose()
-        new_team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
-        new_team.update_score_total("lose")
-        assert_equal(0, new_team.update_score_total("lose"))
+        team = Team.new("Wildcats", ["Billy Bob", "Bobby Boy", "Boy Billy", "Bib-Bob Billy the Boy"], "Simon")
+        team.update_score_total("lose")
+        assert_equal(0, team.update_score_total("lose"))
     end
 end
